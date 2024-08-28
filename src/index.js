@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, BackHandler } from "react-native";
 import ListItem from "./components/ListItem";
 import Input from "./components/Input";
 import { connect } from "react-redux";
-import { complete, submit } from "./reducers/todos";
+import { complete, saveTodo } from "./reducers/todos";
 import { useState } from "react";
 
 const styles = StyleSheet.create({
@@ -57,7 +57,7 @@ const mapsStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   complete: (id) => dispatch(complete(id)),
-  submit: (val) => dispatch(submit(val)),
+  submit: (val) => dispatch(saveTodo(val)),
 });
 
 export default connect(mapsStateToProps, mapDispatchToProps)(App);

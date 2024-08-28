@@ -1,8 +1,10 @@
 import * as reducers from "./reducers";
-import { combineReducers, createStore } from "redux";
+import { thunk } from "redux-thunk";
+import { combineReducers, createStore, applyMiddleware } from "redux";
 
 export default createStore(
   combineReducers({
     ...reducers,
-  })
+  }),
+  applyMiddleware(thunk)
 );
